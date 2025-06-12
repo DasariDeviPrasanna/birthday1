@@ -6,19 +6,23 @@
             "use": "@vercel/static"
         },
         {
-            "src": "style.css"
+            "src": "images/*",
             "use": "@vercel/static"
         },
         {
-            "src": "*.gif",
-            "use": "@vercel/static"
-        },
-        {
-            "src": "*.png",
+            "src": "style.css",
             "use": "@vercel/static"
         }
     ],
     "routes": [
+        {
+            "src": "/images/(.*)",
+            "dest": "/images/$1"
+        },
+        {
+            "src": "/style.css",
+            "dest": "/style.css"
+        },
         {
             "src": "/(.*)",
             "dest": "/$1"
